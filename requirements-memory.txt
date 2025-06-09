@@ -1,0 +1,2 @@
+# Requirements for creating memory (run locally)
+memvid
