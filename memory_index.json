@@ -1,0 +1,151 @@
+{
+  "metadata": [
+    {
+      "id": 0,
+      "text": "Our project provides automated issue analysis and response capabilities",
+      "frame": 0,
+      "length": 71
+    },
+    {
+      "id": 1,
+      "text": "We use AI to understand and respond to user issues effectively",
+      "frame": 1,
+      "length": 62
+    },
+    {
+      "id": 2,
+      "text": "The system can provide helpful guidance and solutions for common problems",
+      "frame": 2,
+      "length": 73
+    },
+    {
+      "id": 3,
+      "text": "We maintain documentation and best practices for issue resolution",
+      "frame": 3,
+      "length": 65
+    },
+    {
+      "id": 4,
+      "text": "Historical issue patterns help improve our response quality",
+      "frame": 4,
+      "length": 59
+    },
+    {
+      "id": 5,
+      "text": "Common troubleshooting steps include checking logs, verifying configuration, and testing connectivity",
+      "frame": 5,
+      "length": 101
+    },
+    {
+      "id": 6,
+      "text": "Performance issues often relate to memory usage, database queries, or network latency",
+      "frame": 6,
+      "length": 85
+    },
+    {
+      "id": 7,
+      "text": "Security concerns should be addressed immediately with proper authentication and authorization",
+      "frame": 7,
+      "length": 94
+    },
+    {
+      "id": 8,
+      "text": "Documentation should be kept up to date and easily accessible to users",
+      "frame": 8,
+      "length": 70
+    },
+    {
+      "id": 9,
+      "text": "Code quality is maintained through proper testing, code reviews, and continuous integration",
+      "frame": 9,
+      "length": 91
+    }
+  ],
+  "chunk_to_frame": {
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9
+  },
+  "frame_to_chunks": {
+    "0": [
+      0
+    ],
+    "1": [
+      1
+    ],
+    "2": [
+      2
+    ],
+    "3": [
+      3
+    ],
+    "4": [
+      4
+    ],
+    "5": [
+      5
+    ],
+    "6": [
+      6
+    ],
+    "7": [
+      7
+    ],
+    "8": [
+      8
+    ],
+    "9": [
+      9
+    ]
+  },
+  "config": {
+    "qr": {
+      "version": 35,
+      "error_correction": "M",
+      "box_size": 5,
+      "border": 3,
+      "fill_color": "black",
+      "back_color": "white"
+    },
+    "codec": "h265",
+    "chunking": {
+      "chunk_size": 1024,
+      "overlap": 32
+    },
+    "retrieval": {
+      "top_k": 5,
+      "batch_size": 100,
+      "max_workers": 4,
+      "cache_size": 1000
+    },
+    "embedding": {
+      "model": "all-MiniLM-L6-v2",
+      "dimension": 384
+    },
+    "index": {
+      "type": "Flat",
+      "nlist": 100
+    },
+    "llm": {
+      "model": "gemini-2.0-flash-exp",
+      "max_tokens": 8192,
+      "temperature": 0.1,
+      "context_window": 32000
+    },
+    "chat": {
+      "max_history": 10,
+      "context_chunks": 5
+    },
+    "performance": {
+      "prefetch_frames": 50,
+      "decode_timeout": 10
+    }
+  }
+}
