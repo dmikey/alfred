@@ -8,9 +8,11 @@ This repository contains a GitHub workflow that automatically processes new issu
 2. **Issue Processing** (automated): When a new issue is opened, the workflow:
    - Reads the issue title and body
    - Loads the pre-created memvid memory files
-   - Uses memvid chat to provide relevant context based on the issue
-   - Calls ChatGPT with both issue content and memvid context
+   - Uses `quick_chat` to retrieve relevant context from the memory (context-only mode)
+   - Calls OpenAI GPT with both issue content and memvid context
    - Posts an automated comment to the issue with the response
+
+**Note**: The system uses memvid in "context-only" mode for memory retrieval and OpenAI for response generation. You may see harmless warnings about "Google provider not available" - these can be safely ignored.
 
 ## Setup
 
@@ -64,6 +66,36 @@ The ChatGPT response format can be customized by modifying the prompt in the `ge
 - `memory.mp4` - Pre-encoded video memory (created by `create_memory.py`)
 - `memory_index.json` - Memory index file (created by `create_memory.py`)
 - `README.md` - This documentation
+
+## Local Testing
+
+Before deploying to GitHub, you can test the agent locally:
+
+### Setup Test Environment
+```bash
+# Run setup script
+./setup_test.sh
+
+# Activate virtual environment 
+source venv/bin/activate
+
+# Load environment variables from .env file
+source .env
+```
+
+### Test Options
+
+1. **Workflow Simulation** - Test the complete GitHub issue workflow:
+   ```bash
+   python simulate_workflow.py
+   ```
+
+2. **Interactive Testing** - Test with custom queries:
+   ```bash
+   python interactive_test.py
+   ```
+
+The testing uses your actual OpenAI API key from the `.env` file but simulates GitHub posting (no real GitHub API calls are made).
 
 ## Workflow
 

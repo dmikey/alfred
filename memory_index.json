@@ -134,10 +134,10 @@
       "nlist": 100
     },
     "llm": {
-      "model": "gemini-2.0-flash-exp",
-      "max_tokens": 8192,
-      "temperature": 0.1,
-      "context_window": 32000
+      "provider": "openai",
+      "model": "gpt-3.5-turbo",
+      "max_tokens": 500,
+      "temperature": 0.1
     },
     "chat": {
       "max_history": 10,

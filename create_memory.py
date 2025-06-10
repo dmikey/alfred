@@ -30,6 +30,23 @@ def create_knowledge_base():
     print("Building video memory...")
     encoder.build_video("memory.mp4", "memory_index.json")
     
+    # Update the config to use OpenAI
+    import json
+    print("Updating memory configuration to use OpenAI...")
+    with open("memory_index.json", "r") as f:
+        index_data = json.load(f)
+    
+    # Update LLM config to use OpenAI
+    index_data["config"]["llm"] = {
+        "provider": "openai",
+        "model": "gpt-3.5-turbo",
+        "max_tokens": 500,
+        "temperature": 0.1
+    }
+    
+    with open("memory_index.json", "w") as f:
+        json.dump(index_data, f, indent=2)
+    
     print("✅ Memory files created successfully!")
     print("Files created: memory.mp4, memory_index.json")
     print("These files should be committed to the repository.")
